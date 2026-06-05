@@ -2,7 +2,7 @@
 
 Einziges Thoth-Biblios-Projekt für die Datenportal-Dokumentation.
 
-Dieses Repo enthält **keine eigentliche Dokumentation**, sondern die Site-
+Dieses Repo enthält ausser dem Glossar **keine eigentliche Dokumentation**, sondern die Site-
 Konfiguration, die mehrere Dokumentationsquellen zu einer gemeinsamen Website
 zusammenführt.
 
