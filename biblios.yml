@@ -19,8 +19,8 @@ ui:
   content_toc: off
   content_section_numbers: on
   # Bei Bedarf auf die tatsächliche Codeberg-/GitLab-/GitHub-URL anpassen.
-  edit_url_pattern: "{repo_url}/_edit/{branch}/{path}"
-  source_url_pattern: "{repo_url}/src/branch/{branch}/{path}"
+  #edit_url_pattern: "{repo_url}/_edit/{branch}/{path}"
+  #source_url_pattern: "{repo_url}/src/branch/{branch}/{path}"
 
 content:
   sources:

@@ -23,6 +23,10 @@ zusammen in einer gemeinsamen Dokumentationswebsite erscheinen.
 ```bash
 java -jar /pfad/zu/thoth-biblios-<version>-all.jar build --config biblios.yml
 ```
+```bash
+java -jar ../thoth/thoth-biblios/build/libs/thoth-biblios-0.0.1-SNAPSHOT-all.jar serve --config biblios.yml --port 8091
+```
+
 
 Für lokale Dummy-Repos:
 
