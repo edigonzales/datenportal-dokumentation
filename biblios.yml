@@ -25,6 +25,17 @@ ui:
 content:
   sources:
     # Neue fachliche Doku-Repos
+    # - id: glossar
+    #   display_name: Glossar
+    #   url: https://codeberg.org/edigonzales/datenportal-dokumentation-glossar.git
+    #   branches:
+    #     - name: main
+    #       display_version: Aktuell
+    #   start_path: docs/biblios
+    #   default_version: main
+    #   navigation:
+    #     file: nav.yml
+    #   start_page: index.adoc
     - id: glossar
       display_name: Glossar
       url: https://codeberg.org/edigonzales/datenportal-dokumentation-glossar.git
@@ -33,9 +44,9 @@ content:
           display_version: Aktuell
       start_path: docs/biblios
       default_version: main
-      navigation:
-        file: nav.yml
-      start_page: index.adoc
+      render_mode: single_page
+      master_file: master.adoc
+      sidebar_toc_numbers: on
 
     # - id: einstieg
     #   display_name: Einstieg
