@@ -18,6 +18,7 @@ ui:
   sidebar_toc_depth: 2
   content_toc: off
   content_section_numbers: on
+  content_section_number_depth: 3
   # Bei Bedarf auf die tatsächliche Codeberg-/GitLab-/GitHub-URL anpassen.
   #edit_url_pattern: "{repo_url}/_edit/{branch}/{path}"
   #source_url_pattern: "{repo_url}/src/branch/{branch}/{path}"
@@ -47,6 +48,20 @@ content:
       render_mode: single_page
       master_file: master.adoc
       sidebar_toc_numbers: on
+
+    - id: datenintegration
+      display_name: Datenintegration
+      url: https://codeberg.org/edigonzales/datenportal-dokumentation-datenintegration.git
+      #url: file:///Users/stefan/sources/datenportal-dokumentation-datenintegration
+      branches:
+        - name: main
+          display_version: Aktuell
+      start_path: docs/biblios
+      default_version: main
+      render_mode: single_page
+      master_file: master.adoc
+      sidebar_toc_numbers: on
+
 
     # - id: einstieg
     #   display_name: Einstieg
@@ -134,17 +149,17 @@ content:
     #     file: nav.yml
     #   start_page: index.adoc
 
-    - id: entwicklung-themenrepo
-      display_name: "Entwicklung: Themenrepo-Vertrag"
-      url: https://codeberg.org/edigonzales/datenportal-themenrepo.git
-      branches:
-        - name: main
-          display_version: Aktuell
-      start_path: docs/biblios/entwicklung
-      default_version: main
-      navigation:
-        file: nav.yml
-      start_page: index.adoc
+    # - id: entwicklung-themenrepo
+    #   display_name: "Entwicklung: Themenrepo-Vertrag"
+    #   url: https://codeberg.org/edigonzales/datenportal-themenrepo.git
+    #   branches:
+    #     - name: main
+    #       display_version: Aktuell
+    #   start_path: docs/biblios/entwicklung
+    #   default_version: main
+    #   navigation:
+    #     file: nav.yml
+    #   start_page: index.adoc
 
     # - id: entwicklung-jenkins-plugin
     #   display_name: "Entwicklung: Jenkins-Plugin"

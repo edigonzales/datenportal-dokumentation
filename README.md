@@ -6,6 +6,9 @@ Dieses Repo enthält ausser dem Glossar **keine eigentliche Dokumentation**, son
 Konfiguration, die mehrere Dokumentationsquellen zu einer gemeinsamen Website
 zusammenführt.
 
+Die gebaute Seite wird via Forgejo Action auf Codeberg Pages deployed:  
+https://edigonzales.codeberg.page/datenportal-dokumentation/
+
 Produktive URL-Idee:
 
 ```text
@@ -26,6 +29,15 @@ java -jar /pfad/zu/thoth-biblios-<version>-all.jar build --config biblios.yml
 ```bash
 java -jar ../thoth/thoth-biblios/build/libs/thoth-biblios-0.0.1-SNAPSHOT-all.jar serve --config biblios.yml --port 8091
 ```
+
+```bash
+java -jar /Users/stefan/sources/thoth/thoth-biblios/build/libs/thoth-biblios-0.0.1-SNAPSHOT-all.jar serve \
+--config ./biblios.yml \
+--port 8091 \
+--use-local-working-tree
+```
+
+
 
 
 Für lokale Dummy-Repos:

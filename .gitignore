@@ -69,3 +69,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# ---> Thoth Biblios
+build/
+.thoth/
+
