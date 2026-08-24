@@ -1,0 +1,95 @@
+name: Build and Deploy Biblios Site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-site:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup Java 25
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Resolve latest snapshot metadata
+        id: snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BASE_URL="https://jars.sogeo.services/snapshots/guru/interlis/thoth-biblios/0.0.1-SNAPSHOT"
+          METADATA_URL="${BASE_URL}/maven-metadata.xml"
+
+          echo "Fetching snapshot metadata: ${METADATA_URL}"
+          curl -fsSL "${METADATA_URL}" -o maven-metadata.xml
+
+          TIMESTAMP="$(grep -oPm1 '(?<=<timestamp>)[^<]+' maven-metadata.xml || true)"
+          BUILD_NUMBER="$(grep -oPm1 '(?<=<buildNumber>)[^<]+' maven-metadata.xml || true)"
+
+          if [ -z "${TIMESTAMP}" ] || [ -z "${BUILD_NUMBER}" ]; then
+            echo "Failed to parse <timestamp> or <buildNumber> from maven-metadata.xml"
+            exit 1
+          fi
+
+          VERSION="0.0.1-${TIMESTAMP}-${BUILD_NUMBER}"
+          JAR_NAME="thoth-biblios-${VERSION}-all.jar"
+          JAR_URL="${BASE_URL}/${JAR_NAME}"
+
+          echo "Resolved snapshot version: ${VERSION}"
+          echo "Resolved JAR URL: ${JAR_URL}"
+
+          echo "jar_name=${JAR_NAME}" >> "$GITHUB_OUTPUT"
+          echo "jar_url=${JAR_URL}" >> "$GITHUB_OUTPUT"
+
+      - name: Download snapshot JAR
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL "${{ steps.snapshot.outputs.jar_url }}" -o "${{ steps.snapshot.outputs.jar_name }}"
+          ls -lh "${{ steps.snapshot.outputs.jar_name }}"
+
+      - name: Build HTML documentation site
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -jar "${{ steps.snapshot.outputs.jar_name }}" build --config ./biblios.yml
+          test -d ./build/site
+          test -s ./build/site/index.html
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./build/site/
+
+  deploy:
+    needs: build-site
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

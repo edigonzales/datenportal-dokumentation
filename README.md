@@ -6,8 +6,10 @@ Dieses Repo enthält ausser dem Glossar **keine eigentliche Dokumentation**, son
 Konfiguration, die mehrere Dokumentationsquellen zu einer gemeinsamen Website
 zusammenführt.
 
-Die gebaute Seite wird via Forgejo Action auf Codeberg Pages deployed:  
-https://edigonzales.codeberg.page/datenportal-dokumentation/
+Die gebaute Seite wird via Forgejo Action auf Codeberg Pages und via GitHub Action auf GitHub Pages deployed:
+
+- Codeberg Pages: https://edigonzales.codeberg.page/datenportal-dokumentation/
+- GitHub Pages: https://edigonzales.github.io/datenportal-dokumentation/
 
 Produktive URL-Idee:
 
