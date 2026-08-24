@@ -127,7 +127,7 @@ content:
     # # Die passenden docs/biblios-Strukturen liegen in existing-code-repo-docs-patches/.
     # - id: software-anlieferformular
     #   display_name: "Software: Anlieferformular"
-    #   url: https://codeberg.org/edigonzales/jenkins-gretl-datenportal-plugin.git
+    #   url: https://codeberg.org/edigonzales/datenportal-jenkins-gretl-plugin.git
     #   branches:
     #     - name: main
     #       display_version: Aktuell
@@ -163,7 +163,7 @@ content:
 
     # - id: entwicklung-jenkins-plugin
     #   display_name: "Entwicklung: Jenkins-Plugin"
-    #   url: https://codeberg.org/edigonzales/jenkins-gretl-datenportal-plugin.git
+    #   url: https://codeberg.org/edigonzales/datenportal-jenkins-gretl-plugin.git
     #   branches:
     #     - name: main
     #       display_version: Aktuell
