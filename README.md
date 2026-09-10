@@ -29,7 +29,9 @@ zusammen in einer gemeinsamen Dokumentationswebsite erscheinen.
 java -jar /pfad/zu/thoth-biblios-<version>-all.jar build --config biblios.yml
 ```
 ```bash
-java -jar ../thoth/thoth-biblios/build/libs/thoth-biblios-0.0.1-SNAPSHOT-all.jar serve --config biblios.yml --port 8091
+java -jar ../thoth/thoth-biblios/build/libs/thoth-biblios-0.0.1-SNAPSHOT-all.jar serve --config biblios.yml --port 8091 \
+--use-local-working-tree
+
 ```
 
 ```bash
@@ -48,3 +50,12 @@ Für lokale Dummy-Repos:
 ./scripts/generate-local-config.sh
 java -jar /pfad/zu/thoth-biblios-<version>-all.jar build --config biblios.local.yml
 ```
+
+
+Mögliche Hintergrundfarben für Cards:
+
+| Zielgruppe | Hintergrund | Wirkung | Kontrast Text / Link |
+|---|---|---|---|
+| Benutzer | `#E8F1FF` | ruhig, vertrauenswürdig, blau | 13.3:1 / 4.76:1 |
+| Administration | `#FFF4E6` | aufmerksam, organisatorisch, amber | 13.9:1 / 4.99:1 |
+| Entwickler | `#F1ECFF` | technisch, eigenständig, violett | 13.1:1 / 4.69:1 |
