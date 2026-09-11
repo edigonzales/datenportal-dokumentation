@@ -60,7 +60,7 @@ content:
       branches:
         - name: main
           display_version: Aktuell
-      start_path: docs/biblios
+      start_path: docs/biblios/entwicklung
       default_version: main
       render_mode: single_page
       master_file: index.adoc
