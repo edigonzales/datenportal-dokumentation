@@ -60,13 +60,11 @@ content:
       branches:
         - name: main
           display_version: Aktuell
-      start_path: docs/biblios/entwicklung
+      start_path: docs/biblios
       default_version: main
       render_mode: single_page
       master_file: index.adoc
       sidebar_toc_numbers: on
-
-
 
     # - id: einstieg
     #   display_name: Einstieg
@@ -128,55 +126,44 @@ content:
     #     file: nav.yml
     #   start_page: index.adoc
 
-    # # Bestehende Code-Repos als Doku-Quellen.
-    # # Die passenden docs/biblios-Strukturen liegen in existing-code-repo-docs-patches/.
-    # - id: software-anlieferformular
-    #   display_name: "Software: Anlieferformular"
-    #   url: https://codeberg.org/edigonzales/datenportal-jenkins-gretl-plugin.git
-    #   branches:
-    #     - name: main
-    #       display_version: Aktuell
-    #   start_path: docs/biblios/software
-    #   default_version: main
-    #   navigation:
-    #     file: nav.yml
-    #   start_page: index.adoc
+    - id: entwicklung-dev-stack
+      display_name: "Entwicklung: Lokaler Datenportal-Stack"
+      card_label: Entwickler
+      url: https://codeberg.org/edigonzales/datenportal-dev-stack.git
+      branches:
+        - name: main
+          display_version: Aktuell
+      start_path: docs/biblios
+      default_version: main
+      render_mode: single_page
+      master_file: index.adoc
+      sidebar_toc_numbers: on
 
-    # - id: betrieb-administration
-    #   display_name: Betrieb und Administration
-    #   url: https://codeberg.org/edigonzales/datenportal-jenkins-dev.git
-    #   branches:
-    #     - name: main
-    #       display_version: Aktuell
-    #   start_path: docs/biblios/betrieb
-    #   default_version: main
-    #   navigation:
-    #     file: nav.yml
-    #   start_page: index.adoc
+    - id: entwicklung-jenkins-dev
+      display_name: "Entwicklung: Jenkins-Dev-Umgebung"
+      card_label: Entwickler
+      url: https://codeberg.org/edigonzales/datenportal-jenkins-dev.git
+      branches:
+        - name: main
+          display_version: Aktuell
+      start_path: docs/biblios/entwicklung
+      default_version: main
+      navigation:
+        file: nav.yml
+      start_page: index.adoc
 
-    # - id: entwicklung-themenrepo
-    #   display_name: "Entwicklung: Themenrepo-Vertrag"
-    #   url: https://codeberg.org/edigonzales/datenportal-themenrepo.git
-    #   branches:
-    #     - name: main
-    #       display_version: Aktuell
-    #   start_path: docs/biblios/entwicklung
-    #   default_version: main
-    #   navigation:
-    #     file: nav.yml
-    #   start_page: index.adoc
-
-    # - id: entwicklung-jenkins-plugin
-    #   display_name: "Entwicklung: Jenkins-Plugin"
-    #   url: https://codeberg.org/edigonzales/datenportal-jenkins-gretl-plugin.git
-    #   branches:
-    #     - name: main
-    #       display_version: Aktuell
-    #   start_path: docs/biblios/entwicklung
-    #   default_version: main
-    #   navigation:
-    #     file: nav.yml
-    #   start_page: index.adoc
+    - id: entwicklung-jenkins-plugin
+      display_name: "Entwicklung: Jenkins-Plugin"
+      card_label: Entwickler
+      url: https://codeberg.org/edigonzales/datenportal-jenkins-gretl-plugin.git
+      branches:
+        - name: main
+          display_version: Aktuell
+      start_path: docs/biblios/entwicklung
+      default_version: main
+      navigation:
+        file: nav.yml
+      start_page: index.adoc
 
 pdf:
   enabled: false
