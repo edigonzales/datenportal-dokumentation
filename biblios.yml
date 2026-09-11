@@ -56,12 +56,11 @@ content:
     - id: themenrepo
       display_name: Themenrepo
       card_label: Themenintegrator
-      #url: https://codeberg.org/edigonzales/datenportal-themenrepo.git
-      url: file:///Users/stefan/sources/datenportal-themenrepo
+      url: https://codeberg.org/edigonzales/datenportal-themenrepo.git
       branches:
         - name: main
           display_version: Aktuell
-      start_path: docs/biblios/entwicklung
+      start_path: docs/biblios
       default_version: main
       render_mode: single_page
       master_file: index.adoc
